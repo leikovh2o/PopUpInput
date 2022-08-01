@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Overpass:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>Form</title>
+</head>
+<body>
+  
+  <!-- --------------- Submit State --------------- -->
+
+  <div class="container">
+    <article>
+      <div id="selection-tab" class="">
+        <div class="star">
+          <img src="/images/icon-star.svg" alt="">
+        </div>
+        <h1>How did we do?</h1>
+        <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+        <ul id="button-list">
+          <li><div class="rating-btn"><div>1</div></div></li>
+          <li><div class="rating-btn"><div>2</div></div></li>
+          <li><div class="rating-btn"><div>3</div></div></li>
+          <li><div class="rating-btn"><div>4</div></div></li>
+          <li><div class="rating-btn"><div>5</div></div></li>
+        </ul>
+        <button id="submit-btn">submit</button>
+      </div>
+
+      <!-- --------------- Thank-you State --------------- -->
+
+      <div id="thankyou-tab" class="hidden">
+        <img src="/images/illustration-thank-you.svg" alt="">
+        <div>
+          <p id="selected-btn"></p>
+        </div>
+        <h1>Thank you!</h1>
+        <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+      </div>
+      
+    </article>
+  </div>
+
+
+  <script src="/javascript/main.js"></script>
+</body>
+</html>
