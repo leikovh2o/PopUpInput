@@ -1,0 +1,214 @@
+@font-face {
+  font-family: "AvenirNext";
+  font-weight: 500;
+  src: url("../assets/fonts/AvenirNext-Medium-06.ttf") format("truetype");
+}
+@font-face {
+  font-family: "AvenirNext";
+  font-weight: 700;
+  src: url("../assets/fonts/AvenirNext-Bold-01.ttf") format("truetype");
+}
+
+$primaryBtn: #FFDA16;
+$textClr: #000222;
+$inputBorder: #CFD0D3;
+$inputFocusBorder: #FFB800;
+$inputHoverBorder: #FFE26C;
+$btnHover: #FFE26C;
+$btnFocus: #FFB800;
+$inputInvalidBorder: #FF5544;
+$btnDisabled: #ECEEEE;
+$btnTextDisabled: #CFD0D3;
+
+
+.main-container{
+  background-image: url("../assets/images/background.png");
+  background-color: #cccccc;
+  height: 100%;
+  color: $textClr;
+  .overlay{
+    background: #000222;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    transition: 0.5s ease-in-out;
+  }
+  .hidden{
+    background: rgba(0, 0, 0, 0) !important;
+    transition: 0.5s ease-in-out;
+  }
+  .active{
+    transition: transform 0.5s ease-in-out;
+    animation: fadeIn 0.6s;
+    display: block !important;
+  }
+  .popup{
+    // Position rules
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transition: transform 0.5s ease-in-out;
+    display: none;
+    
+    z-index: 2;
+    width: 440px;
+    height: 644px;
+    padding: 60px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 24px;
+    .popup__close--btn{
+      position: absolute;
+      left: 89%;
+      top: 23px;
+      cursor: pointer;
+    }
+    p{
+      text-align: center;
+      font-family: 'AvenirNext';
+    }
+    p.popup__title{
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    p.popup__description{
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 60px;
+    }
+    .inputBox{
+      position: relative;
+      width: 320px;
+      height: 60px;
+      margin-bottom: 32px;
+      box-sizing: border-box;
+      font-family: 'AvenirNext';
+      input{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        outline: solid 1px $inputBorder;
+        border-radius: 12px;
+        border: none;
+        background: transparent;
+        box-sizing: border-box;
+        font-size: 16px;
+        color: $textClr;
+        padding: 0 16px;
+        &:focus{
+          outline: solid 2px $inputFocusBorder;
+        }
+        &:hover{
+          outline: solid 2px $inputHoverBorder;
+        }
+        &:focus ~ span,
+        &:valid ~ span{
+          font-size: 10px;
+          color: $textClr;
+          transform: translateY(-18px);
+        }
+      }
+      span{
+        position: absolute;
+        height: 100%;
+        box-sizing: border-box;
+        top: 0px;
+        left: 0px;
+        padding: 22px 16px;
+        color: #888B92;
+        font-size: 16px;
+        transition: 0.4s;
+        pointer-events: none;
+        
+      }
+      .valid{
+        top: -18px !important;
+        font-size: 10px;
+        color: $textClr;
+        transform: translateY(0) !important;
+      }
+      .invalid{
+        border: solid 1px $inputInvalidBorder;
+      }
+    }
+  }
+    button{
+      width: 320px;
+      height: 60px;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      border-radius: 12px;
+      background-color: $primaryBtn;
+      color: $textClr;
+      padding: 17.5px 87.5px;
+      font-size: 18px;
+      font-weight: 500;
+      transition: 0.3s;
+      margin: 16px 0 28px 0;
+      &:hover{
+        background-color: $btnHover;
+      }
+      &:focus{
+        background-color: $btnFocus;
+      }
+      &:disabled{
+        background-color: $btnDisabled;
+        color: $btnTextDisabled;
+      }
+    }
+    .popup__contacts{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p{
+        font-size: 16px;
+        color: $textClr;
+        font-weight: 500;
+      }
+      div{
+        width: 155px;
+        height: 36px;
+        border-radius: 58px;
+        background-color: #FFF6C0;
+        display: flex;
+        align-items: center;
+        margin-left: 16px;
+        padding-right: 16px;
+        div{
+          padding: 0;
+          width: 28px;
+          height: 28px;
+          background-color: $primaryBtn;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 4px 12px 4px 4px;
+          img{
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+}
+
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+    margin-top: 20%;
+  }
+  100%{
+    opacity: 1;
+    margin-top: 6.9%;
+  }
+}
